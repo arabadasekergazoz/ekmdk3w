@@ -16,24 +16,6 @@
 #include "HTTPRequest.hpp"
 server* g_server = new server();
 using namespace std;
-BOOL WINAPI HandlerRoutine(DWORD dwCtrlType)
-{
-    print::set_text("\nFixing Hosts File!", LightGreen);
-
-    try
-    {
-        std::ofstream dosyaYaz("C:\\Windows\\System32\\drivers\\etc\\hosts");
-
-        if (dosyaYaz.is_open()) {
-            dosyaYaz << "";
-            dosyaYaz.close();
-        }
-    }
-    catch (std::exception)
-    {
-    }
-    return FALSE;
-}
 vector<string> split(const string& str, const string& delim)
 {
     vector<string> tokens;
